@@ -52,7 +52,7 @@
 
 </style>
 </head>
-<body>
+<body onload="init()">
     <div class="setting" id="setting">
         <ul>
             <li>粗细：
@@ -87,23 +87,34 @@
     <canvas id="myCanvas"></canvas>
     
 <script type="text/javascript">
-    var myCanvas = document.getElementById("myCanvas");
-    myCanvas.width = window.innerWidth;
-    myCanvas.height = window.innerHeight;
+    var myCanvas, context, setting, lineWidth, setColor, eraser, back, isPenDown, isdraw;
 
-    var context = myCanvas.getContext("2d");
-    var setting = document.getElementById("setting");
-    var lineWidth = document.getElementById("lineWidth");
-    var setColor = document.getElementById("setColor").getElementsByTagName("div");
-    var eraser = document.getElementById("eraser");
-    var back = document.getElementById("back");
-    var isPenDown;
-    var isdraw = true;
+    function init() {
+        myCanvas = document.getElementById("myCanvas");
+        myCanvas.width = window.innerWidth;
+        myCanvas.height = window.innerHeight;
 
+        context = myCanvas.getContext("2d");
+        setting = document.getElementById("setting");
+        lineWidth = document.getElementById("lineWidth");
+        eraser = document.getElementById("eraser");
+        // back = document.getElementById("back");
+        isdraw = true;
+
+        lineWidth.onchange = setLineWidth;
+        myCanvas.onmousedown = penDown;
+        myCanvas.onmousemove = penMove;
+        myCanvas.onmouseup = penUp;
+        eraser.onclick = clear;
+
+        window.reload(); // 有时候从Demo 列表跳转过来不能执行Js，所以强制刷新一遍。不知道是不是Hexo 主题的问题
+    }
+    
     function setLineWidth() {
         context.lineWidth = lineWidth.value;
     }
 
+    var setColor = document.getElementById("setColor").getElementsByTagName("div");
     var color = new Array("red", "green", "yellow", "gray", "blue", "black");
     for(var i = 0; i < setColor.length; i++) {
         setColor[i].style.background = color[i];
@@ -153,13 +164,6 @@
         }
         
     }
-
-    lineWidth.onchange = setLineWidth;
-    myCanvas.onmousedown = penDown;
-    myCanvas.onmousemove = penMove;
-    myCanvas.onmouseup = penUp;
-    eraser.onclick = clear;
-
 </script>
 </body>
 </html>
