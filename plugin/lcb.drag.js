@@ -1,3 +1,9 @@
+/*
+ *@author lichengbo
+ *@date 2015-11-18 version 1.0
+ *@description JavaScript 拖拽效果
+*/
+
 var params = {
     width: 0,
     height:0,
@@ -18,8 +24,6 @@ function disableSelection(target){
         target.onselectstart=function(){return false}
     else if (typeof target.style.MozUserSelect != "undefined") //Firefox route
         target.style.MozUserSelect="none";
-    /*else if(typeof target.style.webkitUserSelect != "undefined")
-        target.style.webkitUserSelect = "none"; 在chrome 存在Bug*/
     else //All other route (ie: Opera)
         target.onmousedown = function(){return false}
 };
