@@ -208,6 +208,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -241,7 +251,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/16/10_history pushState replaceState/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/git-repository-migrate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李乘波">
@@ -260,7 +270,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/09/16/10_history pushState replaceState/" itemprop="url">HTML5 history pushState&replaceState</a></h1>
+                <a class="post-title-link" href="/2018/04/09/git-repository-migrate/" itemprop="url">Git 仓库代码迁移</a></h1>
         
 
         <div class="post-meta">
@@ -272,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-16T17:35:37+08:00">
-                2016-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T15:48:00+08:00">
+                2018-04-09
               </time>
             
 
@@ -311,10 +321,131 @@
 
       
         
-          <p>浏览器的history 对象有很多实用的方法和属性，比如back(), forward(), go(), length等。HTML5 中增加的pushState 和replaceState 方法能够修改浏览器的历史记录，这使得我们能在不跳转页面的前提下修改浏览器的URL。这就解决了在Ajax 局部刷新页面时，浏览器后退键无效的缺点。</p>
+          
+            <h2 id="迁移远程仓库">迁移远程仓库</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 克隆旧仓库镜像</span></span><br><span class="line">git clone --mirror oldRepoUrl</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加新仓库地址</span></span><br><span class="line">cd the_repo</span><br><span class="line">git remote add remoteName newRepoUrl</span><br><span class="line"></span><br><span class="line"><span class="comment">// 推到新的远程库</span></span><br><span class="line">git <span class="keyword">push</span> -f --tags remoteName refs<span class="regexp">/heads/</span>*:refs<span class="regexp">/heads/</span>*</span><br></pre></td></tr></table></figure>
+<h2 id="更新本地仓库">更新本地仓库</h2><p>方式1. 远程仓库迁移后，可删除本地代码仓库和镜像仓库，重新克隆新仓库代码。<br>方式2. 进入本地代码仓库，更新仓库地址<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// git查看远程仓库地址</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置新的仓库地址</span></span><br><span class="line">git remote <span class="keyword">set</span>-url origin newRepoUrl</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/onbeforeunload/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李乘波">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silence's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/22/onbeforeunload/" itemprop="url">修改内容未保存浏览器关闭确认</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T20:06:49+08:00">
+                2018-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近开发遇到了检测用户修改未保存时，关闭浏览器提示保存的需求，类似下图。本文记录下用到的知识点。<br><img src="http://images.lichengbo.cn/20180322/alert.png" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/09/16/10_history pushState replaceState/#thêm" rel="contents">
+            <a class="btn" href="/2018/03/22/onbeforeunload/#thêm" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -365,7 +496,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/20/9_JavaScript 事件绑定与事件冒泡/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/08/node/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李乘波">
@@ -384,7 +515,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/03/20/9_JavaScript 事件绑定与事件冒泡/" itemprop="url">JavaScript 事件绑定与事件冒泡</a></h1>
+                <a class="post-title-link" href="/2018/03/08/node/" itemprop="url">Node 相关记录</a></h1>
         
 
         <div class="post-meta">
@@ -396,8 +527,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-20T11:17:00+08:00">
-                2016-03-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T19:28:20+08:00">
+                2018-03-08
               </time>
             
 
@@ -435,10 +566,10 @@
 
       
         
-          <p>Dom 事件是一个非常常用的知识点，网页中经常需要给元素添加点击、双击等事件函数，用于对用户的操作做出反馈。<br>原生JavaScript 常用的事件绑定函数为：</p>
+          <p>Node.js® 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js 使用高效、轻量级的事件驱动、非阻塞 I/O 模型。<br>npm是随同NodeJS一起安装的包管理工具，是目前世界上最大的开源库生态系统。<br>本文主要是记录Node 及npm 的一些常用命令</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/03/20/9_JavaScript 事件绑定与事件冒泡/#thêm" rel="contents">
+            <a class="btn" href="/2018/03/08/node/#thêm" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -489,7 +620,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/19/8_JavaScript 闭包与垃圾回收器/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/css-shadow/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李乘波">
@@ -508,7 +639,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/03/19/8_JavaScript 闭包与垃圾回收器/" itemprop="url">JavaScript 闭包与垃圾回收器</a></h1>
+                <a class="post-title-link" href="/2018/03/07/css-shadow/" itemprop="url">css shadow</a></h1>
         
 
         <div class="post-meta">
@@ -520,8 +651,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-19T17:09:57+08:00">
-                2016-03-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:17:14+08:00">
+                2018-03-07
               </time>
             
 
@@ -559,10 +690,12 @@
 
       
         
-          <p>闭包是指有权访问另一个函数作用域中的变量的函数，或者说能够读取其他函数内部变量的函数。<br>创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量。</p>
+          <p>阴影常用的有 <code>box-shadow</code> 和 <code>text-shadow</code> </p>
+<p>box-shadow: h-shadow v-shadow blur spread color inset;</p>
+<p>可以直接使用转换工具将参数转换为CSS语法：<a href="http://demo.lichengbo.cn/shadow.html">转换工具</a></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/03/19/8_JavaScript 闭包与垃圾回收器/#thêm" rel="contents">
+            <a class="btn" href="/2018/03/07/css-shadow/#thêm" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -613,7 +746,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/12/7_微信短信验证码插件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/31/scss-autoCompile/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李乘波">
@@ -632,7 +765,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/03/12/7_微信短信验证码插件/" itemprop="url">微信短信验证码插件</a></h1>
+                <a class="post-title-link" href="/2017/12/31/scss-autoCompile/" itemprop="url">scss 自动编译配置</a></h1>
         
 
         <div class="post-meta">
@@ -644,8 +777,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-12T16:14:06+08:00">
-                2016-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-31T16:14:36+08:00">
+                2017-12-31
               </time>
             
 
@@ -683,135 +816,10 @@
 
       
         
-          <p>最近一直在工作室学习微信公众号开发，主要是使用WeiPHP 框架进行开发。框架已经把常用的函数、接口都封装好了，用起来也很方便。而且每个插件代表一个独立的功能，可以很方便的移植到其他系统上。也可以把网站封装成插件的形式，这样结合微信公众号的平台可以使网站得到更好的推广。</p>
+          <h2 id="引语">引语</h2><p>目前项目使用的CSS预处理器是SCSS，工作流是Ruby+SASS+IDEA file watcher。Windows 需要安装Ruby，配置繁琐。而且随着项目向Vue 迁移，前端开发不需要本地起Tomcat 服务。另外VSCode 编辑器的发展，越来越多的前端开发使用这个轻量的编辑器，因此想更换下SCSS 的编译流程。本文记录下配置过程踩下的坑。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/03/12/7_微信短信验证码插件/#thêm" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/11/18/6_2_javascript获取元素CSS样式代码示例/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="李乘波">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Silence's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/11/18/6_2_javascript获取元素CSS样式代码示例/" itemprop="url">javascript获取元素CSS样式代码示例</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-18T21:57:46+08:00">
-                2015-11-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="使用css控制页面有4种方式，分别为行内样式(内联样式)、内嵌式、链接式、导入式。">使用css控制页面有4种方式，分别为行内样式(内联样式)、内嵌式、链接式、导入式。</h2><ul>
-<li>行内样式(内联样式)即写在html标签中的style属性中，如
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/18/6_2_javascript获取元素CSS样式代码示例/#thêm" rel="contents">
+            <a class="btn" href="/2017/12/31/scss-autoCompile/#thêm" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -853,7 +861,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -899,7 +907,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -912,7 +920,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
