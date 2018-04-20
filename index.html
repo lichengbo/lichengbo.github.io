@@ -81,12 +81,13 @@
 
 <meta name="description" content="Web Blog">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Silence's Blog">
+<meta property="og:title" content="Silence&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Silence's Blog">
+<meta property="og:site_name" content="Silence&#39;s Blog">
 <meta property="og:description" content="Web Blog">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Silence's Blog">
+<meta name="twitter:title" content="Silence&#39;s Blog">
 <meta name="twitter:description" content="Web Blog">
 
 
@@ -129,6 +130,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d4b53d1fc3e8bea13c26f88f7b2b2ece";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -322,8 +333,8 @@
       
         
           
-            <h2 id="迁移远程仓库">迁移远程仓库</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 克隆旧仓库镜像</span></span><br><span class="line">git clone --mirror oldRepoUrl</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加新仓库地址</span></span><br><span class="line">cd the_repo</span><br><span class="line">git remote add remoteName newRepoUrl</span><br><span class="line"></span><br><span class="line"><span class="comment">// 推到新的远程库</span></span><br><span class="line">git <span class="keyword">push</span> -f --tags remoteName refs<span class="regexp">/heads/</span>*:refs<span class="regexp">/heads/</span>*</span><br></pre></td></tr></table></figure>
-<h2 id="更新本地仓库">更新本地仓库</h2><p>方式1. 远程仓库迁移后，可删除本地代码仓库和镜像仓库，重新克隆新仓库代码。<br>方式2. 进入本地代码仓库，更新仓库地址<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// git查看远程仓库地址</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置新的仓库地址</span></span><br><span class="line">git remote <span class="keyword">set</span>-url origin newRepoUrl</span><br></pre></td></tr></table></figure></p>
+            <h2 id="迁移远程仓库"><a href="#迁移远程仓库" class="headerlink" title="迁移远程仓库"></a>迁移远程仓库</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 克隆旧仓库镜像</span></span><br><span class="line">git clone --mirror oldRepoUrl</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加新仓库地址</span></span><br><span class="line">cd the_repo</span><br><span class="line">git remote add remoteName newRepoUrl</span><br><span class="line"></span><br><span class="line"><span class="comment">// 推到新的远程库</span></span><br><span class="line">git <span class="keyword">push</span> -f --tags remoteName refs<span class="regexp">/heads/</span>*:refs<span class="regexp">/heads/</span>*</span><br></pre></td></tr></table></figure>
+<h2 id="更新本地仓库"><a href="#更新本地仓库" class="headerlink" title="更新本地仓库"></a>更新本地仓库</h2><p>方式1. 远程仓库迁移后，可删除本地代码仓库和镜像仓库，重新克隆新仓库代码。<br>方式2. 进入本地代码仓库，更新仓库地址<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// <span class="string">git查</span>看远程仓库地址</span><br><span class="line"><span class="string">git </span><span class="string">remote </span>-v</span><br><span class="line"></span><br><span class="line">// 设置新的仓库地址</span><br><span class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">newRepoUrl</span></span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -445,7 +456,7 @@
           <p>最近开发遇到了检测用户修改未保存时，关闭浏览器提示保存的需求，类似下图。本文记录下用到的知识点。<br><img src="http://images.lichengbo.cn/20180322/alert.png" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/22/onbeforeunload/#thêm" rel="contents">
+            <a class="btn" href="/2018/03/22/onbeforeunload/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -569,7 +580,7 @@
           <p>Node.js® 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js 使用高效、轻量级的事件驱动、非阻塞 I/O 模型。<br>npm是随同NodeJS一起安装的包管理工具，是目前世界上最大的开源库生态系统。<br>本文主要是记录Node 及npm 的一些常用命令</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/08/node/#thêm" rel="contents">
+            <a class="btn" href="/2018/03/08/node/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -692,10 +703,10 @@
         
           <p>阴影常用的有 <code>box-shadow</code> 和 <code>text-shadow</code> </p>
 <p>box-shadow: h-shadow v-shadow blur spread color inset;</p>
-<p>可以直接使用转换工具将参数转换为CSS语法：<a href="http://demo.lichengbo.cn/shadow.html">转换工具</a></p>
+<p>可以直接使用转换工具将参数转换为CSS语法：<a href="http://demo.lichengbo.cn/shadow.html" target="_blank" rel="noopener">转换工具</a></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/07/css-shadow/#thêm" rel="contents">
+            <a class="btn" href="/2018/03/07/css-shadow/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -816,10 +827,10 @@
 
       
         
-          <h2 id="引语">引语</h2><p>目前项目使用的CSS预处理器是SCSS，工作流是Ruby+SASS+IDEA file watcher。Windows 需要安装Ruby，配置繁琐。而且随着项目向Vue 迁移，前端开发不需要本地起Tomcat 服务。另外VSCode 编辑器的发展，越来越多的前端开发使用这个轻量的编辑器，因此想更换下SCSS 的编译流程。本文记录下配置过程踩下的坑。</p>
+          <h2 id="引语"><a href="#引语" class="headerlink" title="引语"></a>引语</h2><p>目前项目使用的CSS预处理器是SCSS，工作流是Ruby+SASS+IDEA file watcher。Windows 需要安装Ruby，配置繁琐。而且随着项目向Vue 迁移，前端开发不需要本地起Tomcat 服务。另外VSCode 编辑器的发展，越来越多的前端开发使用这个轻量的编辑器，因此想更换下SCSS 的编译流程。本文记录下配置过程踩下的坑。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/31/scss-autoCompile/#thêm" rel="contents">
+            <a class="btn" href="/2017/12/31/scss-autoCompile/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

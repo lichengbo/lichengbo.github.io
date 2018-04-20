@@ -80,11 +80,13 @@
 
 
 <meta name="description" content="最近一直在工作室学习微信公众号开发，主要是使用WeiPHP 框架进行开发。框架已经把常用的函数、接口都封装好了，用起来也很方便。而且每个插件代表一个独立的功能，可以很方便的移植到其他系统上。也可以把网站封装成插件的形式，这样结合微信公众号的平台可以使网站得到更好的推广。">
+<meta name="keywords" content="微信插件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信短信验证码插件">
 <meta property="og:url" content="http://yoursite.com/2016/03/12/7_微信短信验证码插件/index.html">
-<meta property="og:site_name" content="Silence's Blog">
+<meta property="og:site_name" content="Silence&#39;s Blog">
 <meta property="og:description" content="最近一直在工作室学习微信公众号开发，主要是使用WeiPHP 框架进行开发。框架已经把常用的函数、接口都封装好了，用起来也很方便。而且每个插件代表一个独立的功能，可以很方便的移植到其他系统上。也可以把网站封装成插件的形式，这样结合微信公众号的平台可以使网站得到更好的推广。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-03-12T13:25:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信短信验证码插件">
@@ -130,6 +132,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d4b53d1fc3e8bea13c26f88f7b2b2ece";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -330,8 +342,8 @@
 <li>插件的一系列操作在Controller 中完成</li>
 </ul>
 <p>因为这个插件功能比较简单，没有什么复杂的操作。只是调用了聚合数据的短信API，用于发送短信。然后再把用户提交过来的验证码和原本生成的验证码进行对比，如果相同且符合条件则验证成功。</p>
-<h2 id="中间碰到的问题">中间碰到的问题</h2><p>刚开始接触微信开发，很多地方不知道怎么弄，比如不知道怎么调试。不知道不同模块之间的调用方式。<br>比如发送Ajax 请求URL要这样写<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">&#123;<span class="attribute">:addons_url</span><span class="list">(<span class="keyword">'Sms://Sms/checkVerify'</span>)</span>&#125;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="其他的一些问题">其他的一些问题</h2><p>主要的问题是这个框架是一个小团队写的，可能技术也不是很成熟，用的过程中有很多Bug，也有地方设计的不是很合理。比如今天搞定的密码重复加密问题。本来一个很简单的问题，自己写的话就是一行代码的事。结果因为他是继承ThinkPHP的Controller中的方法，没办法自定义。所以我只好复写了基类中的方法才搞定，大概得有几十行代码才完成吧。所以做开发可以合理的运用框架，但绝不能依赖框架。</p>
+<h2 id="中间碰到的问题"><a href="#中间碰到的问题" class="headerlink" title="中间碰到的问题"></a>中间碰到的问题</h2><p>刚开始接触微信开发，很多地方不知道怎么弄，比如不知道怎么调试。不知道不同模块之间的调用方式。<br>比如发送Ajax 请求URL要这样写<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="symbol">:addons_url</span>(<span class="name">'Sms://Sms/checkVerify'</span>)&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="其他的一些问题"><a href="#其他的一些问题" class="headerlink" title="其他的一些问题"></a>其他的一些问题</h2><p>主要的问题是这个框架是一个小团队写的，可能技术也不是很成熟，用的过程中有很多Bug，也有地方设计的不是很合理。比如今天搞定的密码重复加密问题。本来一个很简单的问题，自己写的话就是一行代码的事。结果因为他是继承ThinkPHP的Controller中的方法，没办法自定义。所以我只好复写了基类中的方法才搞定，大概得有几十行代码才完成吧。所以做开发可以合理的运用框架，但绝不能依赖框架。</p>
 
       
     </div>

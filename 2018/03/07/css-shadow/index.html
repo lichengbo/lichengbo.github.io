@@ -79,23 +79,20 @@
 
 
 
-<meta name="description" content="阴影常用的有 box-shadow 和 text-shadow 
-box-shadow: h-shadow v-shadow blur spread color inset;
-可以直接使用转换工具将参数转换为CSS语法：转换工具">
+<meta name="description" content="阴影常用的有 box-shadow 和 text-shadow  box-shadow: h-shadow v-shadow blur spread color inset; 可以直接使用转换工具将参数转换为CSS语法：转换工具">
+<meta name="keywords" content="转载">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css shadow">
 <meta property="og:url" content="http://yoursite.com/2018/03/07/css-shadow/index.html">
-<meta property="og:site_name" content="Silence's Blog">
-<meta property="og:description" content="阴影常用的有 box-shadow 和 text-shadow 
-box-shadow: h-shadow v-shadow blur spread color inset;
-可以直接使用转换工具将参数转换为CSS语法：转换工具">
+<meta property="og:site_name" content="Silence&#39;s Blog">
+<meta property="og:description" content="阴影常用的有 box-shadow 和 text-shadow  box-shadow: h-shadow v-shadow blur spread color inset; 可以直接使用转换工具将参数转换为CSS语法：转换工具">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://files.jb51.net/file_images/article/201511/2015112717073526.png">
 <meta property="og:updated_time" content="2018-03-07T15:43:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css shadow">
-<meta name="twitter:description" content="阴影常用的有 box-shadow 和 text-shadow 
-box-shadow: h-shadow v-shadow blur spread color inset;
-可以直接使用转换工具将参数转换为CSS语法：转换工具">
+<meta name="twitter:description" content="阴影常用的有 box-shadow 和 text-shadow  box-shadow: h-shadow v-shadow blur spread color inset; 可以直接使用转换工具将参数转换为CSS语法：转换工具">
+<meta name="twitter:image" content="http://files.jb51.net/file_images/article/201511/2015112717073526.png">
 
 
 
@@ -137,6 +134,16 @@ box-shadow: h-shadow v-shadow blur spread color inset;
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d4b53d1fc3e8bea13c26f88f7b2b2ece";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -327,7 +334,7 @@ box-shadow: h-shadow v-shadow blur spread color inset;
       
         <p>阴影常用的有 <code>box-shadow</code> 和 <code>text-shadow</code> </p>
 <p>box-shadow: h-shadow v-shadow blur spread color inset;</p>
-<p>可以直接使用转换工具将参数转换为CSS语法：<a href="http://demo.lichengbo.cn/shadow.html" target="_blank" rel="external">转换工具</a></p>
+<p>可以直接使用转换工具将参数转换为CSS语法：<a href="http://demo.lichengbo.cn/shadow.html" target="_blank" rel="noopener">转换工具</a></p>
 <a id="more"></a>
 <p>相关概念：</p>
 <p>“混合模式”：Photoshop提供了各式各样的混合模式，但是CSS3阴影只支持正常模式（normal）。</p>
@@ -339,8 +346,8 @@ box-shadow: h-shadow v-shadow blur spread color inset;
 <p>“大小（Size）”：阴影的大小。在CSS3中 blur-radius + spread-radius = Size 即 blur-radius = Size - spread-radius 。</p>
 <p>若样式如图<br><img src="http://files.jb51.net/file_images/article/201511/2015112717073526.png" alt="样式设置图"></p>
 <p>计算如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">color: rgba(<span class="number">118</span>,<span class="number">113</span>,<span class="number">113</span>,<span class="number">.75</span>)</span><br><span class="line">x-offset: <span class="number">5</span> <span class="function">x <span class="title">cos</span><span class="params">(<span class="number">180</span>°- <span class="number">145</span>°)</span> </span>= <span class="number">4.09</span>px</span><br><span class="line">y-offset: <span class="number">5</span> <span class="function">x <span class="title">sin</span><span class="params">(<span class="number">180</span>°- <span class="number">145</span>°)</span> </span>= <span class="number">2.87</span>px</span><br><span class="line">spread-radius: <span class="number">10</span> x <span class="number">6</span>% = <span class="number">0.6</span>px</span><br><span class="line">blur-radius: <span class="number">10</span> - <span class="number">0.6</span> = <span class="number">9.4</span>px;</span><br><span class="line">box-shadow: <span class="number">4.09</span>px <span class="number">2.87</span>px <span class="number">9.4</span>px <span class="number">0.6</span><span class="function">px <span class="title">rgba</span><span class="params">(<span class="number">118</span>,<span class="number">113</span>,<span class="number">113</span>,<span class="number">.75</span>)</span></span>;</span><br><span class="line">text-shadow: <span class="number">4.09</span>px <span class="number">2.87</span>px <span class="number">9.4</span><span class="function">px <span class="title">rgba</span><span class="params">(<span class="number">118</span>,<span class="number">113</span>,<span class="number">113</span>,<span class="number">.75</span>)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>文章转自<a href="http://www.jb51.net/css/404167.html" target="_blank" rel="external">http://www.jb51.net/css/404167.html</a></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">color:</span> rgba(<span class="number">118</span>,<span class="number">113</span>,<span class="number">113</span>,<span class="number">.75</span>)</span><br><span class="line">x-<span class="string">offset:</span> <span class="number">5</span> x cos(<span class="number">180</span>°- <span class="number">145</span>°) = <span class="number">4.09</span>px</span><br><span class="line">y-<span class="string">offset:</span> <span class="number">5</span> x sin(<span class="number">180</span>°- <span class="number">145</span>°) = <span class="number">2.87</span>px</span><br><span class="line">spread-<span class="string">radius:</span> <span class="number">10</span> x <span class="number">6</span>% = <span class="number">0.6</span>px</span><br><span class="line">blur-<span class="string">radius:</span> <span class="number">10</span> - <span class="number">0.6</span> = <span class="number">9.4</span>px;</span><br><span class="line">box-<span class="string">shadow:</span> <span class="number">4.09</span>px <span class="number">2.87</span>px <span class="number">9.4</span>px <span class="number">0.6</span>px rgba(<span class="number">118</span>,<span class="number">113</span>,<span class="number">113</span>,<span class="number">.75</span>);</span><br><span class="line">text-<span class="string">shadow:</span> <span class="number">4.09</span>px <span class="number">2.87</span>px <span class="number">9.4</span>px rgba(<span class="number">118</span>,<span class="number">113</span>,<span class="number">113</span>,<span class="number">.75</span>);</span><br></pre></td></tr></table></figure>
+<p>文章转自<a href="http://www.jb51.net/css/404167.html" target="_blank" rel="noopener">http://www.jb51.net/css/404167.html</a></p>
 
       
     </div>

@@ -80,14 +80,16 @@
 
 
 <meta name="description" content="浏览器的history 对象有很多实用的方法和属性，比如back(), forward(), go(), length等。HTML5 中增加的pushState 和replaceState 方法能够修改浏览器的历史记录，这使得我们能在不跳转页面的前提下修改浏览器的URL。这就解决了在Ajax 局部刷新页面时，浏览器后退键无效的缺点。">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML5 history pushState&replaceState">
+<meta property="og:title" content="HTML5 history pushState&amp;replaceState">
 <meta property="og:url" content="http://yoursite.com/2016/09/16/10_history pushState replaceState/index.html">
-<meta property="og:site_name" content="Silence's Blog">
+<meta property="og:site_name" content="Silence&#39;s Blog">
 <meta property="og:description" content="浏览器的history 对象有很多实用的方法和属性，比如back(), forward(), go(), length等。HTML5 中增加的pushState 和replaceState 方法能够修改浏览器的历史记录，这使得我们能在不跳转页面的前提下修改浏览器的URL。这就解决了在Ajax 局部刷新页面时，浏览器后退键无效的缺点。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-09-16T12:14:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML5 history pushState&replaceState">
+<meta name="twitter:title" content="HTML5 history pushState&amp;replaceState">
 <meta name="twitter:description" content="浏览器的history 对象有很多实用的方法和属性，比如back(), forward(), go(), length等。HTML5 中增加的pushState 和replaceState 方法能够修改浏览器的历史记录，这使得我们能在不跳转页面的前提下修改浏览器的URL。这就解决了在Ajax 局部刷新页面时，浏览器后退键无效的缺点。">
 
 
@@ -130,6 +132,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d4b53d1fc3e8bea13c26f88f7b2b2ece";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -320,8 +332,8 @@
       
         <p>浏览器的history 对象有很多实用的方法和属性，比如back(), forward(), go(), length等。HTML5 中增加的pushState 和replaceState 方法能够修改浏览器的历史记录，这使得我们能在不跳转页面的前提下修改浏览器的URL。这就解决了在Ajax 局部刷新页面时，浏览器后退键无效的缺点。</p>
 <a id="more"></a>
-<h2 id="pushState">pushState</h2><p>使用方法<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.pushState(<span class="keyword">state</span>Object, title, url);</span><br></pre></td></tr></table></figure></p>
-<p>使用中我感觉前两个参数作用不是很大，<a href="https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history" target="_blank" rel="external">MDN</a> 对其解释如下</p>
+<h2 id="pushState"><a href="#pushState" class="headerlink" title="pushState"></a>pushState</h2><p>使用方法<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.pushState(<span class="keyword">state</span>Object, title, url);</span><br></pre></td></tr></table></figure></p>
+<p>使用中我感觉前两个参数作用不是很大，<a href="https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history" target="_blank" rel="noopener">MDN</a> 对其解释如下</p>
 <blockquote>
 <ul>
 <li>状态对象（state object） 一个JavaScript对象，与用pushState()方法创建的新历史记录条目关联。无论何时用户导航到新创建的状态，popstate事件都会被触发，并且事件对象的state属性都包含历史记录条目的状态对象的拷贝。</li>
@@ -329,12 +341,12 @@
 <li>地址（URL） 新的历史记录条目的地址。浏览器不会在调用pushState()方法后加载该地址，但之后，可能会试图加载，例如用户重启浏览器。新的URL不一定是绝对路径；如果是相对路径，它将以当前URL为基准；传入的URL与当前URL应该是同源的，否则，pushState()会抛出异常。该参数是可选的；不指定的话则为文档当前URL。</li>
 </ul>
 </blockquote>
-<p>所以我使用时直接这样调用<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.pushState(<span class="literal">null</span>, <span class="string">""</span>, url);</span><br></pre></td></tr></table></figure></p>
+<p>所以我使用时直接这样调用<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.pushState(<span class="literal">null</span>, <span class="string">""</span>, <span class="built_in">url</span>);</span><br></pre></td></tr></table></figure></p>
 <p>且如果url 传入的是相对路径，只会修改当前url 的最后一个参数。在MDN 中我还看到了操作location 有种方法也能起到这种效果，就是使用location 修改url 的hash 值时。url 会变化，且页面不会跳转</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.location = <span class="string">"<span class="subst">#abc</span>"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.<span class="keyword">location</span> <span class="title">= "#abc</span><span class="string">";</span></span><br></pre></td></tr></table></figure>
 <p>通过上面这种方式和pushState() 都会增加history 记录，history.length 会加一</p>
-<h2 id="replaceState">replaceState</h2><p>replaceState 方法和pushState 方法使用方式一致，区别是replaceState 只修改当前url 参数，不会创建新的history 条目。</p>
-<p>另外有人把pushState 和ajax 结合起来，封装成了<a href="https://github.com/defunkt/jquery-pjax" target="_blank" rel="external">pjax</a> 插件，查看<a href="http://pjax.herokuapp.com/" target="_blank" rel="external">Demo</a></p>
+<h2 id="replaceState"><a href="#replaceState" class="headerlink" title="replaceState"></a>replaceState</h2><p>replaceState 方法和pushState 方法使用方式一致，区别是replaceState 只修改当前url 参数，不会创建新的history 条目。</p>
+<p>另外有人把pushState 和ajax 结合起来，封装成了<a href="https://github.com/defunkt/jquery-pjax" target="_blank" rel="noopener">pjax</a> 插件，查看<a href="http://pjax.herokuapp.com/" target="_blank" rel="noopener">Demo</a></p>
 
       
     </div>

@@ -80,16 +80,19 @@
 
 
 <meta name="description" content="CSS3是CSS（层叠样式表 Cascading StyleSheet）的升级技术。使原本庞大且复杂的CSS 更加模块化。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。CSS3完全向后兼容，现在CSS3 已经基本普及，平常用也是遵循新的标准。这篇主要是说一些CSS3 的动画属性Transitions （过渡）, Animation （动画）和">
+<meta name="keywords" content="CSS3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS3 属性及动画">
 <meta property="og:url" content="http://yoursite.com/2015/10/26/5_css3study/index.html">
-<meta property="og:site_name" content="Silence's Blog">
+<meta property="og:site_name" content="Silence&#39;s Blog">
 <meta property="og:description" content="CSS3是CSS（层叠样式表 Cascading StyleSheet）的升级技术。使原本庞大且复杂的CSS 更加模块化。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。CSS3完全向后兼容，现在CSS3 已经基本普及，平常用也是遵循新的标准。这篇主要是说一些CSS3 的动画属性Transitions （过渡）, Animation （动画）和">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.php100.com/uploadfile/2012/1029/20121029075656108.jpg">
 <meta property="og:updated_time" content="2015-11-24T03:19:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3 属性及动画">
 <meta name="twitter:description" content="CSS3是CSS（层叠样式表 Cascading StyleSheet）的升级技术。使原本庞大且复杂的CSS 更加模块化。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。CSS3完全向后兼容，现在CSS3 已经基本普及，平常用也是遵循新的标准。这篇主要是说一些CSS3 的动画属性Transitions （过渡）, Animation （动画）和">
+<meta name="twitter:image" content="http://www.php100.com/uploadfile/2012/1029/20121029075656108.jpg">
 
 
 
@@ -131,6 +134,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d4b53d1fc3e8bea13c26f88f7b2b2ece";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -321,7 +334,7 @@
       
         <p>CSS3是CSS（层叠样式表 Cascading StyleSheet）的升级技术。使原本庞大且复杂的CSS 更加模块化。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。CSS3完全向后兼容，现在CSS3 已经基本普及，平常用也是遵循新的标准。这篇主要是说一些CSS3 的动画属性Transitions （过渡）, Animation （动画）和 Transforms （变形）</p>
 <a id="more"></a>
-<h2 id="transition_过渡属性">transition 过渡属性</h2><p>语法<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="rule"><span class="attribute">transition</span>:<span class="value"> property duration timing-function delay</span></span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="transition-过渡属性"><a href="#transition-过渡属性" class="headerlink" title="transition 过渡属性"></a>transition 过渡属性</h2><p>语法<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transition: <span class="keyword">property</span><span class="title"> </span>duration timing-function delay;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>transition-property:  none | all | [ &lt;indent&gt; ] [ ‘,’ &lt;indent&gt; ]*  规定设置过渡效果的 CSS 属性的名称。</p>
 <ul>
@@ -341,12 +354,12 @@
 <p>　　4. ease-out：（减速），ease-out 函数等同于贝塞尔曲线(0, 0, 0.58, 1.0)；</p>
 <p>　　5. ease-in-out：（加速然后减速），ease-in-out 函数等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)；</p>
 <p>　　6. cubic-bezier：（该值允许你去自定义一个时间曲线）， 特定的cubic-bezier曲线。 (x1, y1, x2, y2)　　四个值特定于曲线上点P1和点P2。所有值需在[0, 1]区域内，否则无效。</p>
-<p>　　当然前五个效果比较常用，至于<a href="http://baike.baidu.com/link?url=FeXhy7EcivcLKbhHxTQw-syG85MuU31Vq-oy57YLpsNpTRm8T-h8WIYCCqUL0ROL3v2Yiq83VRqFGuH3-Cf_jq" target="_blank" rel="external">贝塞尔曲线</a>不用去纠结，这是PHP100 画的运动效果图</p>
+<p>　　当然前五个效果比较常用，至于<a href="http://baike.baidu.com/link?url=FeXhy7EcivcLKbhHxTQw-syG85MuU31Vq-oy57YLpsNpTRm8T-h8WIYCCqUL0ROL3v2Yiq83VRqFGuH3-Cf_jq" target="_blank" rel="noopener">贝塞尔曲线</a>不用去纠结，这是PHP100 画的运动效果图</p>
 <p>　　<img src="http://www.php100.com/uploadfile/2012/1029/20121029075656108.jpg" alt="图片"></p>
 <ul>
 <li>transition-delay ：定义过渡效果何时开始</li>
 </ul>
-<h2 id="animation_动画属性">animation 动画属性</h2><ul>
+<h2 id="animation-动画属性"><a href="#animation-动画属性" class="headerlink" title="animation 动画属性"></a>animation 动画属性</h2><ul>
 <li>animation-name  规定需要绑定到选择器的 keyframe 名称。。</li>
 <li>animation-duration  规定完成动画所花费的时间，以秒或毫秒计。</li>
 <li>animation-timing-function   规定动画的速度曲线。属性和transition 相同</li>
@@ -365,12 +378,12 @@
 </ul>
 </li>
 </ul>
-<p>定义动画<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="at_rule">@<span class="keyword">keyframes</span> name </span>&#123;</span><br><span class="line">    0% <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">opacity</span>:<span class="value"> <span class="number">1</span></span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line"></span><br><span class="line">    50% <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">opacity</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line"></span><br><span class="line">    100% <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">opacity</span>:<span class="value"> <span class="number">1</span></span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="transform_属性">transform 属性</h2><p>transform: none|transform-functions;</p>
+<p>定义动画<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> name &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    50% &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="transform-属性"><a href="#transform-属性" class="headerlink" title="transform 属性"></a>transform 属性</h2><p>transform: none|transform-functions;</p>
 <p>常用的函数有</p>
 <p>translate(x,y) 定义 2D 转换<br>scale(x,y) 定义 2D 缩放转换<br>rotateX 定义沿着 X 轴的 3D 旋转<br>skew(x-angle,y-angle) 定义沿着 X 和 Y 轴的 2D 倾斜转换<br>perspective(n)  为 3D 转换元素定义透视视图</p>
-<p>我现在主要用的都是2D 的，3D还不是很会用，先放两个Demo 在这。有时间再把transform 属性补充完整<br><a href="http://lichengbo.github.io/demo/Postcard/" target="_blank" rel="external">CSS3 图片墙</a>， <a href="http://lichengbo.github.io/demo/Postcard/css3Demo.html" target="_blank" rel="external">图片切换效果</a></p>
-<p>本文参考:<br><a href="http://www.php100.com/html/webkaifa/DIV_CSS/2012/1029/11403.html" target="_blank" rel="external">php100 CSS3中的Transition属性详解</a><br><a href="http://www.w3school.com.cn/css3/" target="_blank" rel="external">w3school CSS3教程</a></p>
+<p>我现在主要用的都是2D 的，3D还不是很会用，先放两个Demo 在这。有时间再把transform 属性补充完整<br><a href="http://lichengbo.github.io/demo/Postcard/" target="_blank" rel="noopener">CSS3 图片墙</a>， <a href="http://lichengbo.github.io/demo/Postcard/css3Demo.html" target="_blank" rel="noopener">图片切换效果</a></p>
+<p>本文参考:<br><a href="http://www.php100.com/html/webkaifa/DIV_CSS/2012/1029/11403.html" target="_blank" rel="noopener">php100 CSS3中的Transition属性详解</a><br><a href="http://www.w3school.com.cn/css3/" target="_blank" rel="noopener">w3school CSS3教程</a></p>
 
       
     </div>
@@ -536,7 +549,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#transition_过渡属性"><span class="nav-number">1.</span> <span class="nav-text">transition 过渡属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#animation_动画属性"><span class="nav-number">2.</span> <span class="nav-text">animation 动画属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transform_属性"><span class="nav-number">3.</span> <span class="nav-text">transform 属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#transition-过渡属性"><span class="nav-number">1.</span> <span class="nav-text">transition 过渡属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#animation-动画属性"><span class="nav-number">2.</span> <span class="nav-text">animation 动画属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transform-属性"><span class="nav-number">3.</span> <span class="nav-text">transform 属性</span></a></li></ol></div>
             
 
           </div>
