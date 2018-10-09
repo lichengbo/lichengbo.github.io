@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3 图片墙</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div class="left">
+        <!-- <img src="img/gear.png"> -->
+    </div>
+    <div class="right">
+        <!-- <img src="img/gear.png"> -->
+    </div>
+
+    <div class="gear">
+        <img id="gear" src="img/gear.png">
+    </div>
+
+    <h1 class="show">HFUT明信片图片墙</h1>
+    <div class="box show">
+        <div id="box">      
+            <script type="text/javascript">
+                var box = document.getElementById("box");
+                var pics = "";
+
+                for(var i=1; i<=15; i++){
+                    var random_width = 150 + 100 * Math.random();
+                    pics += '<a href="#" class="pic pic'+i+'"><img style="min-height:75px;" width="'+random_width+'" src="img/img'+i+'.jpg" />明信片'+i+'</a>'; 
+                }
+                box.innerHTML = pics;
+
+                var img = document.getElementById("gear");
+                setTimeout(function() {
+                    img.style.display = 'none';
+                },8000);
+                
+            </script>
+        </div>
+    </div>
+</body>
+</html>

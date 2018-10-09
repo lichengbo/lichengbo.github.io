@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>涂鸦板</title>
+
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    .setting {
+        width: 130px;
+        height: 220px;
+        background: lightgray;
+        position: absolute;
+        left: -130px;
+        top: 20%;
+
+        font-family: 华文新魏;
+        font-size: 18px;
+    }
+
+    .setting ul {
+        padding-top: 30px;
+    }
+
+    .setting ul li {
+        margin-bottom: 10px;
+        padding: 0 10px;
+    }
+
+    .circle {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        float: left;
+        margin: 0 5px 5px 5px;
+        cursor: pointer;
+    }
+    
+    #eraser {
+        cursor:pointer;
+        margin-top: 75px;
+    }
+
+</style>
+</head>
+<body onload="init()">
+    <div class="setting" id="setting">
+        <ul>
+            <li>粗细：
+                <select id="lineWidth">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                </select>
+            </li>
+
+            <li>
+                颜色
+            </li>
+
+            <li id="setColor">
+                <div class="circle red"></div>
+                <div class="circle green"></div>
+                <div class="circle yellow"></div>
+                <div class="circle gray"></div>
+                <div class="circle blue"></div>
+                <div class="circle black"></div>
+            </li>
+            <li id="eraser">状态：画图</li>
+            <!-- <li id="back">后退一步</li> -->
+        </ul>
+    </div>
+    <canvas id="myCanvas"></canvas>
+    
+<script type="text/javascript">
+    var myCanvas, context, setting, lineWidth, setColor, eraser, back, isPenDown, isdraw;
+
+    function init() {
+        myCanvas = document.getElementById("myCanvas");
+        myCanvas.width = window.innerWidth;
+        myCanvas.height = window.innerHeight;
+
+        context = myCanvas.getContext("2d");
+        setting = document.getElementById("setting");
+        lineWidth = document.getElementById("lineWidth");
+        eraser = document.getElementById("eraser");
+        // back = document.getElementById("back");
+        isdraw = true;
+
+        lineWidth.onchange = setLineWidth;
+        myCanvas.onmousedown = penDown;
+        myCanvas.onmousemove = penMove;
+        myCanvas.onmouseup = penUp;
+        eraser.onclick = clear;
+    }
+    
+    function setLineWidth() {
+        context.lineWidth = lineWidth.value;
+    }
+
+    var setColor = document.getElementById("setColor").getElementsByTagName("div");
+    var color = new Array("red", "green", "yellow", "gray", "blue", "black");
+
+    for(var i = 0; i < setColor.length; i++) {
+        setColor[i].style.background = color[i];
+        setColor[i].i = i;
+        setColor[i].onclick = function() {
+           context.strokeStyle = color[this.i];
+        }
+    }
+
+    function penDown(event) {
+        context.beginPath();
+        context.lineCap = "square";
+        context.moveTo(event.clientX, event.clientY);
+        
+        isPenDown = true;
+    }
+
+    function penMove(event) {
+        if(isPenDown) {
+            if(isdraw) {
+                context.lineTo(event.clientX, event.clientY);
+                context.stroke();
+            } else {
+                context.clearRect(event.clientX - 2, event.clientY -2, 4, 4);
+            }            
+        } else {
+            if(event.clientX == 0) {
+                setting.style.left = 0;
+            } else {
+                setting.style.left = -130 + "px";
+            }
+        }
+    }
+
+    function penUp() {
+        isPenDown = false;
+        context.save();
+    }
+
+    function clear() {
+        isdraw = !isdraw;
+
+        if(isdraw) {
+            eraser.innerHTML = "状态：画图";
+        } else {
+            eraser.innerHTML = "状态：橡皮擦";
+        }
+        
+    }
+</script>
+</body>
+</html>
