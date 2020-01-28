@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS3," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CSS3是CSS（层叠样式表 Cascading StyleSheet）的升级技术。使原本庞大且复杂的CSS 更加模块化。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。CSS3完全向后兼容，现在CSS3 已经基本普及，平常用也是遵循新的标准。这篇主要是说一些CSS3 的动画属性Transitions （过渡）, Animation （动画）和">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3 属性及动画">
+<meta property="og:url" content="http://yoursite.com/2015/10/26/2015_5_css3study/index.html">
+<meta property="og:site_name" content="Silence&#39;s Blog">
+<meta property="og:description" content="CSS3是CSS（层叠样式表 Cascading StyleSheet）的升级技术。使原本庞大且复杂的CSS 更加模块化。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。CSS3完全向后兼容，现在CSS3 已经基本普及，平常用也是遵循新的标准。这篇主要是说一些CSS3 的动画属性Transitions （过渡）, Animation （动画）和">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.php100.com/uploadfile/2012/1029/20121029075656108.jpg">
+<meta property="og:updated_time" content="2020-01-28T08:49:06.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3 属性及动画">
+<meta name="twitter:description" content="CSS3是CSS（层叠样式表 Cascading StyleSheet）的升级技术。使原本庞大且复杂的CSS 更加模块化。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。CSS3完全向后兼容，现在CSS3 已经基本普及，平常用也是遵循新的标准。这篇主要是说一些CSS3 的动画属性Transitions （过渡）, Animation （动画）和">
+<meta name="twitter:image" content="http://www.php100.com/uploadfile/2012/1029/20121029075656108.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/10/26/2015_5_css3study/"/>
+
+
+
+
+
+  <title>CSS3 属性及动画 | Silence's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Silence's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome to Silence's Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/10/26/2015_5_css3study/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李乘波">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silence's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS3 属性及动画</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-26T17:08:21+08:00">
+                2015-10-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>CSS3是CSS（层叠样式表 Cascading StyleSheet）的升级技术。使原本庞大且复杂的CSS 更加模块化。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。CSS3完全向后兼容，现在CSS3 已经基本普及，平常用也是遵循新的标准。这篇主要是说一些CSS3 的动画属性Transitions （过渡）, Animation （动画）和 Transforms （变形）</p>
+<a id="more"></a>
+<h2 id="transition-过渡属性"><a href="#transition-过渡属性" class="headerlink" title="transition 过渡属性"></a>transition 过渡属性</h2><p>语法<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transition: <span class="keyword">property</span><span class="title"> </span>duration timing-function delay;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>transition-property:  none | all | [ &lt;indent&gt; ] [ ‘,’ &lt;indent&gt; ]*  规定设置过渡效果的 CSS 属性的名称。</p>
+<ul>
+<li>none(没有属性改变)</li>
+<li>all（所有属性改变）默认值</li>
+<li>indent（元素属性名）；当其值为none时，transition马上停止执行，当指定为all 时，则元素产生任何属性值变化时都将执行transition效果，ident是可以指定元素的某一个属性值</li>
+<li>([ &lt;indent&gt; ] [ ‘,’ &lt;indent&gt; ]* 表示属性值的正闭包，即至少一个属性或有多个属性，多个属性时用逗号隔开)</li>
+</ul>
+</li>
+<li><p>transition-duration  规定完成过渡效果需要多少秒或毫秒。</p>
+</li>
+<li>transition-timing-function: ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;) [, ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;)]*</li>
+</ul>
+<p>　　规定速度效果的速度曲线<br>　　1. ease：（逐渐变慢）默认值，ease函数等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0)；</p>
+<p>　　2. linear：（匀速），linear 函数等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0)；</p>
+<p>　　3. ease-in：(加速)，ease-in 函数等同于贝塞尔曲线(0.42, 0, 1.0, 1.0)；</p>
+<p>　　4. ease-out：（减速），ease-out 函数等同于贝塞尔曲线(0, 0, 0.58, 1.0)；</p>
+<p>　　5. ease-in-out：（加速然后减速），ease-in-out 函数等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)；</p>
+<p>　　6. cubic-bezier：（该值允许你去自定义一个时间曲线）， 特定的cubic-bezier曲线。 (x1, y1, x2, y2)　　四个值特定于曲线上点P1和点P2。所有值需在[0, 1]区域内，否则无效。</p>
+<p>　　当然前五个效果比较常用，至于<a href="http://baike.baidu.com/link?url=FeXhy7EcivcLKbhHxTQw-syG85MuU31Vq-oy57YLpsNpTRm8T-h8WIYCCqUL0ROL3v2Yiq83VRqFGuH3-Cf_jq" target="_blank" rel="noopener">贝塞尔曲线</a>不用去纠结，这是PHP100 画的运动效果图</p>
+<p>　　<img src="http://www.php100.com/uploadfile/2012/1029/20121029075656108.jpg" alt="图片"></p>
+<ul>
+<li>transition-delay ：定义过渡效果何时开始</li>
+</ul>
+<h2 id="animation-动画属性"><a href="#animation-动画属性" class="headerlink" title="animation 动画属性"></a>animation 动画属性</h2><ul>
+<li>animation-name  规定需要绑定到选择器的 keyframe 名称。。</li>
+<li>animation-duration  规定完成动画所花费的时间，以秒或毫秒计。</li>
+<li>animation-timing-function   规定动画的速度曲线。属性和transition 相同</li>
+<li>animation-delay 规定在动画开始之前的延迟。</li>
+<li>animation-iteration-count: n | infinite   规定动画应该播放的次数。默认值为1 infinite 无限循环</li>
+<li>animation-direction: normal | alternate; 规定是否应该轮流反向播放动画。<ul>
+<li>normal 为默认值。动画应该正常播放。即每次动画从0% 处开始  </li>
+<li>alternate   动画应该轮流反向播放。即从0% 到100%，然后从100% 变化到0%</li>
+</ul>
+</li>
+<li>animation-fill-mode：none | forwards | backwards | both 检索或设置对象动画时间之外的状态<ul>
+<li>none：默认值。不设置对象动画之外的状态</li>
+<li>forwards：设置对象状态为动画结束时的状态</li>
+<li>backwards：设置对象状态为动画开始时的状态</li>
+<li>both：设置对象状态为动画结束或开始的状态</li>
+</ul>
+</li>
+</ul>
+<p>定义动画<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> name &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    50% &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="transform-属性"><a href="#transform-属性" class="headerlink" title="transform 属性"></a>transform 属性</h2><p>transform: none|transform-functions;</p>
+<p>常用的函数有</p>
+<p>translate(x,y) 定义 2D 转换<br>scale(x,y) 定义 2D 缩放转换<br>rotateX 定义沿着 X 轴的 3D 旋转<br>skew(x-angle,y-angle) 定义沿着 X 和 Y 轴的 2D 倾斜转换<br>perspective(n)  为 3D 转换元素定义透视视图</p>
+<p>我现在主要用的都是2D 的，3D还不是很会用，先放两个Demo 在这。有时间再把transform 属性补充完整<br><a href="http://lichengbo.github.io/demo/Postcard/" target="_blank" rel="noopener">CSS3 图片墙</a>， <a href="http://lichengbo.github.io/demo/Postcard/css3Demo.html" target="_blank" rel="noopener">图片切换效果</a></p>
+<p>本文参考:<br><a href="http://www.php100.com/html/webkaifa/DIV_CSS/2012/1029/11403.html" target="_blank" rel="noopener">php100 CSS3中的Transition属性详解</a><br><a href="http://www.w3school.com.cn/css3/" target="_blank" rel="noopener">w3school CSS3教程</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS3/" rel="tag"># CSS3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/07/2015_4_ThinkPHP Demo/" rel="next" title="随便说说和一个ThinkPHP Demo">
+                <i class="fa fa-chevron-left"></i> 随便说说和一个ThinkPHP Demo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/18/2015_6_JavaScript-简单拖拽/" rel="prev" title="JavaScript 简单拖拽">
+                JavaScript 简单拖拽 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">李乘波</p>
+              <p class="site-description motion-element" itemprop="description">Web Blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#transition-过渡属性"><span class="nav-number">1.</span> <span class="nav-text">transition 过渡属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#animation-动画属性"><span class="nav-number">2.</span> <span class="nav-text">animation 动画属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transform-属性"><span class="nav-number">3.</span> <span class="nav-text">transform 属性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李乘波</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
